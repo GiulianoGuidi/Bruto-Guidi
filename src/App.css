@@ -16,17 +16,29 @@
 .titulo{
   margin-top: 20px;
   display: flex;
-  justify-content: center;
-  flex-direction: column;
+  
+  
 }
 
 .card{
   display: flex;
-  
   width: 400px;
-  
+  border: 3px solid lightblue;
+  margin: 3px;
   
 }
 
+.flex{
+  display: flex;
+}
 
+.margin{
+  margin: 5px;
+  color: blue;
+  border-color: aquamarine;
+}
+.botonCarrito{
+  color: blue;
+  border-color: aquamarine;
+}
 

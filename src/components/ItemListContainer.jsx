@@ -1,36 +1,44 @@
 import React from 'react'
+import ItemCount from './ItemCount'
 
 const ItemListContainer = () => {
   return (
+    <>
     <div className='titulo'>
-        <div class="card">
-  <div class="card-body">
-  <h2>Pan de campo</h2>
+        <div className='card'>
+  <div className="card-body">
+  <h3>Pan de campo</h3>
    <p>$500</p>
+   <ItemCount  stock = '4'/>
   </div>
 </div>
-<div class="card">
-  <div class="card-body">
-  <h2>Pan de centeno</h2>
+<div className='card'>
+  <div className="card-body">
+  <h3>Pan de centeno</h3>
   <p>$500</p>
+  <ItemCount stock = '5' />
   </div>
 </div>
-<div class="card">
-  <div class="card-body">
-  <h2>Foccacia</h2>
+<div className='card'>
+  <div className="card-body">
+  <h3>Foccacia</h3>
   <p>$450</p>
+  <ItemCount  stock = '1'/>
   </div>
 </div>
-<div class="card">
-  <div class="card-body">
-  <h2>Baguette</h2>
+<div className='card'>
+  <div className="card-body">
+  <h3>Baguette</h3>
   <p>$350</p>
+  <ItemCount  stock = '6'/>
   </div>
 </div>
         
 
     </div>
+    </>
   )
 }
+
 
 export default ItemListContainer
