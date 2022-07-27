@@ -6,12 +6,12 @@ const Navbar = () => {
  
   return (
     <div className='Navbar_menu'>
-
-        <button className='Navbar_button'>Menú</button>
-        <button className='Navbar_button'>Productos</button>
-        <button className='Navbar_button'>Sobre Nosotros</button>
-        <button className='Navbar_button'>Contacto</button>
-
+      
+        <button className='Navbar_button m-2'>Menú</button>
+        <button className='Navbar_button m-2'>Productos</button>
+        <button className='Navbar_button m-2'>Sobre Nosotros</button>
+        <button className='Navbar_button m-2'>Contacto</button>
+        
         <CartWidget />
         
     

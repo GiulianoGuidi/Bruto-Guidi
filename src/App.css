@@ -1,3 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+
+
 
 .Logo-carrito{
   margin-top: 20px;
@@ -5,8 +14,11 @@
   justify-content: center;
 }
 
+
+
 .Navbar_button{
   font-size: 20px;
+  
 }
 
 .titulo{
@@ -26,15 +38,16 @@
 
 .flex{
   display: flex;
+  border: 3px solid black;
 }
 
 .margin{
   margin: 5px;
-  color: blue;
+  color:black;
   border-color: aquamarine;
 }
 .botonCarrito{
-  color: blue;
+  color: whitesmoke;
   border-color: aquamarine;
 }
 

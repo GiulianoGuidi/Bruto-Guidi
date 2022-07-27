@@ -17,8 +17,8 @@ function suma (){
  
 
   return (
-    <div className='flex'>
-        <div>Stock disponible {props.stock}</div>
+    <div className='flex  border'>
+        
         
     <button disabled ={contador === 1} onClick={resta} className='margin'>-</button>
     <h3 className='margin'>{contador}</h3>
