@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-
+import ItemCount from './ItemCount'
 import ItemList from './ItemList'
 
 const ItemListContainer = () => {
@@ -7,10 +7,15 @@ const ItemListContainer = () => {
 const [producto, setProducto] = useState([])
 
 useEffect (() => {
+
+  const mostrarProductos= () => {
+
+   return new Promise((resolve, reject) => {
+
   setTimeout(() =>{
   setProducto(
   [
-    {id: 1, categoria:"salado", nombre:"Pan de campo", precio: 410, img: "./../assets/img/pandecampo.jpg", cantidad: 1},
+    {id: 1, categoria:"salado", nombre:"Pan de campo", precio: 410, img: "../assets/img/pandecampo.jpg", cantidad: 1},
     {id: 2, categoria:"salado", nombre:"Pan multicereal", precio: 450, img:"../assets/img/multi.jpg", cantidad: 1},
     {id: 3, categoria:"salado", nombre:"Pan de centeno", precio: 500, img:"../assets/img/pancenteno.jpg", cantidad: 1},
     {id: 4, categoria:"salado", nombre:"Chipa x 1/4", precio: 550, img:"../assets/img/chipa.jpg", cantidad: 1},
@@ -24,8 +29,17 @@ useEffect (() => {
     {id: 12, categoria:"pizza",nombre:"Pizza margarita", precio: 1100, img:"../assets/img/pizzamarga.jpeg", cantidad: 1}
     
 ])
+
+resolve(producto)
+
 },2000)
+})
+  }
+
+  mostrarProductos(producto)
+
 },[])
+
 
 
   return (

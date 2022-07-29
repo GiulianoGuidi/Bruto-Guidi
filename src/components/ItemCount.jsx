@@ -17,13 +17,14 @@ function suma (){
  
 
   return (
-    <div className='flex  border'>
+    <div className='flex border'>
         
-        
+    <div className='fila'>
     <button disabled ={contador === 1} onClick={resta} className='margin'>-</button>
     <h3 className='margin'>{contador}</h3>
     <button disabled = {contador == (props.stock)} onClick={suma} className='margin'>+</button>
-    <button className='botonCarrito'>Agregar al carrito</button>
+    </div>
+    <button className='botonCarrito border bg'>Agregar al carrito</button>
 
     </div>
   )
