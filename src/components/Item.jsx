@@ -4,15 +4,20 @@ import ItemCount from './ItemCount'
 
 
 
-const Item = ({categoria, nombre, precio, img}) => {
+
+
+const Item = ({categoria, nombre, precio, img, stock}) => {
 
   return (
    
      <div className='bg-blue-300 p-3 rouded-md text-lg'>
-     <img src='{img}' alt='' className='img' /> 
-     <h5>Categoria : {categoria}</h5>
-     <p>Nombre : {nombre}</p>
-     <p>Precio : ${precio}</p>
+     <img src={img} alt='' className='img' /> 
+     <h5>{categoria}</h5>
+     <p>{nombre}</p>
+     <p>${precio}</p>
+     <p>Stock disponible  {stock}</p>
+     
+
 
      <ItemCount  />
 

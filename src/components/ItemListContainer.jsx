@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import ItemCount from './ItemCount'
 import ItemList from './ItemList'
 
 const ItemListContainer = () => {
@@ -8,36 +7,32 @@ const [producto, setProducto] = useState([])
 
 useEffect (() => {
 
-  const mostrarProductos= () => {
+  const productohardcore =
+  [
+    {id: 1, categoria:"salado", nombre:"Pan de campo", precio: 410, img: "../assets/img/pandecampo.jpg", stock: 5},
+    {id: 2, categoria:"salado", nombre:"Pan multicereal", precio: 450, img:"../assets/img/multi.jpg", stock: 6},
+    {id: 3, categoria:"salado", nombre:"Pan de centeno", precio: 500, img:"../assets/img/pancenteno.jpg", stock: 2},
+    {id: 4, categoria:"salado", nombre:"Chipa x 1/4", precio: 550, img:"../assets/img/chipa.jpg", stock: 4},
+    {id: 5, categoria:"dulce",nombre:"Medialuna", precio: 110, img:"../assets/img/medialu.jpg", stock: 7},
+    {id: 7, categoria:"dulce",nombre:"Alfajor de maicena", precio: 280, img:"../assets/img/alfajor.jpg", stock: 3},
+    {id: 6, categoria:"dulce",nombre:"Croissant", precio: 200, img:"../assets/img/croissant.jpg", stock: 8},
+    {id: 8, categoria:"dulce",nombre:"Porcion de torta", precio: 650, img:"../assets/img/torta.jpg", stock: 2},
+    {id: 9, categoria:"pizza",nombre:"Prepizza mozzarella", precio: 950, img:"../assets/img/pizzamusa.jpg", stock: 5},
+    {id: 10, categoria:"pizza",nombre:"Prepizza cuatro quesos", precio: 1200, img:"../assets/img/pizza4quesos.jpg", stock: 2},
+    {id: 11, categoria:"pizza",nombre:"Prepizza peperonni", precio: 1100, img:"../assets/img/pizzapepe.jpg", stock: 7},
+    {id: 12, categoria:"pizza",nombre:"Prepizza margarita", precio: 1100, img:"../assets/img/pizzamarga.jpeg", stock: 3}
+    
+]
 
-   return new Promise((resolve, reject) => {
+const mostrarProductos = new Promise((res, rej) => {
 
   setTimeout(() =>{
-  setProducto(
-  [
-    {id: 1, categoria:"salado", nombre:"Pan de campo", precio: 410, img: "../assets/img/pandecampo.jpg", cantidad: 1},
-    {id: 2, categoria:"salado", nombre:"Pan multicereal", precio: 450, img:"../assets/img/multi.jpg", cantidad: 1},
-    {id: 3, categoria:"salado", nombre:"Pan de centeno", precio: 500, img:"../assets/img/pancenteno.jpg", cantidad: 1},
-    {id: 4, categoria:"salado", nombre:"Chipa x 1/4", precio: 550, img:"../assets/img/chipa.jpg", cantidad: 1},
-    {id: 5, categoria:"dulce",nombre:"Medialuna", precio: 110, img:"../assets/img/medialu.jpg", cantidad: 1},
-    {id: 7, categoria:"dulce",nombre:"Alfajor de maicena", precio: 280, img:"../assets/img/alfajor.jpg", cantidad: 1},
-    {id: 6, categoria:"dulce",nombre:"Croissant", precio: 200, img:"../assets/img/croissant.jpg", cantidad: 1},
-    {id: 8, categoria:"dulce",nombre:"Porcion de torta", precio: 650, img:"../assets/img/torta.jpg", cantidad: 1},
-    {id: 9, categoria:"pizza",nombre:"Pizza mozzarella", precio: 950, img:"../assets/img/pizzamusa.jpg", cantidad: 1},
-    {id: 10, categoria:"pizza",nombre:"Pizza cuatro quesos", precio: 1200, img:"../assets/img/pizza4quesos.jpg", cantidad: 1},
-    {id: 11, categoria:"pizza",nombre:"Pizza peperonni", precio: 1100, img:"../assets/img/pizzapepe.jpg", cantidad: 1},
-    {id: 12, categoria:"pizza",nombre:"Pizza margarita", precio: 1100, img:"../assets/img/pizzamarga.jpeg", cantidad: 1}
-    
-])
-
-resolve(producto)
-
-},2000)
+    res(productohardcore)
+  },2000)
 })
-  }
-
-  mostrarProductos(producto)
-
+mostrarProductos.then((res) =>{
+  setProducto(res)
+})
 },[])
 
 
