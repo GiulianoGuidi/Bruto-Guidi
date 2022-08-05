@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from 'react'
-import ItemList from './ItemList'
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import ItemList from './ItemList';
 
 const ItemListContainer = () => {
 
 const [producto, setProducto] = useState([])
+const {categoria} = useParams();
 
 useEffect (() => {
 
@@ -27,13 +29,18 @@ useEffect (() => {
 const mostrarProductos = new Promise((res, rej) => {
 
   setTimeout(() =>{
-    res(productohardcore)
-  },2000)
+    if(!categoria){
+      res(productohardcore)
+    }else {
+    res(productohardcore.filter((prod) => prod.categoria == categoria))
+    }
+   
+  },1000)
 })
 mostrarProductos.then((res) =>{
   setProducto(res)
 })
-},[])
+},[{categoria}])
 
 
 
