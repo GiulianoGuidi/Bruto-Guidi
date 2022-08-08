@@ -6,18 +6,21 @@ const Navbar = () => {
 
  
   return (
-    <div className='Navbar_menu'>
+    <>
+    <div className='bg-orange-500'>
       
-        <Link to = {'/'} className='Navbar_button'> Home </Link> 
-        <Link to = {'/categorias/salado'} className='Navbar_button'>Salado</Link>
-        <Link to = {'/categorias/dulce'} className='Navbar_button'>Dulce</Link>
-        <Link to = {'/categorias/pizza'} className='Navbar_button'>Pizza</Link>
-        
-        <CartWidget />
-        
-    
-        
+        <Link to = {'/'} className='rounded-xl p-2 m-2 text-lg bg-sky-600 hover:bg-sky-700'> Home </Link> 
+        <div className='Navbar_button_cat'>
+        <Link to = {'/categorias/dulce'} className='bg-red-100 rounded-xl p-2 m-2'>Dulce</Link>
+
+        <Link to = {'/categorias/salado'} className='bg-red-100 rounded-xl p-2 m-2'>Salado</Link>
+
+        <Link to = {'/categorias/pizza'} className='bg-red-100 rounded-xl p-2 m-2'>Pizza</Link>
+        </div>
+         
     </div>
+    <CartWidget /> 
+    </>
   )
 } 
 

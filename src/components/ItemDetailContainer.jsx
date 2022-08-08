@@ -11,6 +11,8 @@ const ItemDetailContainer = () => {
   const {id} = useParams();
   
   useEffect (() => {
+
+  
   
     const productohardcore =
     [
@@ -32,22 +34,25 @@ const ItemDetailContainer = () => {
   const mostrarProductos = new Promise((res, rej) => {
   
     setTimeout(() =>{
-
-      res(productohardcore.find((prod) => prod.id == id))
+    
+        res(productohardcore.find((prod) => prod.id == id))
       
-     
-    },500)
+
+    },1000)
   })
   mostrarProductos.then((res) =>{
     setProducto(res)
   })
-  },[{id}])
+
+
+
+  },[id])
 
 
   return (
-    
-        <ItemDetail producto={producto}/>
-    
+    <>
+     {id.length ? <ItemDetail producto = {producto} /> : <p>Cargando...</p> }
+    </>
   )
 }
 

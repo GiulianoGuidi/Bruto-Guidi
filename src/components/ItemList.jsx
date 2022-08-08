@@ -8,7 +8,7 @@ const ItemList = ({producto}) => {
     <div className='grid grid-cols-4 gap-4'>
    {
    producto.map((item) => 
-    <Item key = {item.id} img = {item.img} categoria ={item.categoria} nombre = {item.nombre} precio = {item.precio} stock = {item.stock} />
+    <Item key = {item.id} id= {item.id} img = {item.img} categoria ={item.categoria} nombre = {item.nombre} precio = {item.precio} stock = {item.stock} />
    )}
     </div>
   )

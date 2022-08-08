@@ -5,7 +5,10 @@ import React, { useState } from 'react'
 const ItemCount = () => {
 
  const [contador, setContador] = useState(1)
+ 
+ const [onAdd, setOnAdd] =useState()
 
+ 
   
 
  function resta(){

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { unstable_renderSubtreeIntoContainer } from 'react-dom';
 import { useParams } from 'react-router-dom';
 import ItemList from './ItemList';
 
@@ -8,6 +9,9 @@ const [producto, setProducto] = useState([])
 const {categoria} = useParams();
 
 useEffect (() => {
+
+  
+ 
 
   const productohardcore =
   [
@@ -40,14 +44,24 @@ const mostrarProductos = new Promise((res, rej) => {
 mostrarProductos.then((res) =>{
   setProducto(res)
 })
-},[{categoria}])
+
+return () =>{
+
+  setProducto([])
+}
+  
+
+},[categoria])
 
 
 
   return (
     
     <div className='bg-gray-100 p-4 m-5'>
-   <ItemList producto = {producto} />
+      <h2 className='flexo'>{categoria}</h2>
+
+   {producto.length ? <ItemList producto = {producto} /> : <p>Cargando...</p> }
+
    </div>
     
   )
