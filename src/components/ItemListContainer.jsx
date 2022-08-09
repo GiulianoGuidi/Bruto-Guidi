@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { unstable_renderSubtreeIntoContainer } from 'react-dom';
 import { useParams } from 'react-router-dom';
+import ItemCount from './ItemCount';
 import ItemList from './ItemList';
 
 const ItemListContainer = () => {
@@ -61,6 +62,8 @@ return () =>{
       <h2 className='flexo'>{categoria}</h2>
 
    {producto.length ? <ItemList producto = {producto} /> : <p>Cargando...</p> }
+
+   
 
    </div>
     

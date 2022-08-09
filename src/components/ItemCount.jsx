@@ -2,13 +2,21 @@ import React, { useState } from 'react'
 
 
 
-const ItemCount = () => {
+const ItemCount = ({stock}) => {
 
  const [contador, setContador] = useState(1)
  
- const [onAdd, setOnAdd] =useState()
+ const [agregar, setAgregar] = useState(true)
 
- 
+function onAdd () {
+
+
+  setContador(false)
+  alert('Terminar mi compra')
+
+
+}
+
   
 
  function resta(){
@@ -27,10 +35,10 @@ function suma (){
     <div className='fila'>
     <button disabled ={contador === 1} onClick={resta} className='margin'>-</button>
     <h3 className='margin'>{contador}</h3>
-    <button  onClick={suma} className='margin'>+</button>
+    <button  onClick={suma} disabled={contador == stock} className='margin'>+</button>
     </div>
     
-    <button className='botonCarrito border bg'>Agregar al carrito</button>
+    <button className='botonCarrito border bg' onClick={onAdd}>Agregar al carrito</button>
 
     </div>
   )
