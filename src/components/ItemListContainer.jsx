@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { unstable_renderSubtreeIntoContainer } from 'react-dom';
 import { useParams } from 'react-router-dom';
-import ItemCount from './ItemCount';
 import ItemList from './ItemList';
 
 const ItemListContainer = () => {

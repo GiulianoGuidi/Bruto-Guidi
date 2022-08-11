@@ -59,9 +59,7 @@
   flex-direction: row;
   justify-content: center;
 }
-.bg{
-  background-color: brown;
-}
+
 
 .margin{
   margin: 5px;
@@ -69,10 +67,6 @@
   border-color: aquamarine;
 }
 
-.botonCarrito{
-  color: whitesmoke;
-  border-color: aquamarine;
-}
 
 .caja{
   max-width: 20%;
