@@ -7,6 +7,7 @@ import ItemCount from './ItemCount'
 const ItemDetail = ({producto}) => {
 
 
+
   return (
     <>
     <div className='caja'>

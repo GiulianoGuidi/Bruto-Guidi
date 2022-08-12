@@ -39,7 +39,7 @@ function suma (){
     <button className='bg-pink-600 hover:bg-red-700' onClick={() => setAgregar(false)} >Agregar al carrito</button>
     </div>
     :
-    <Link to ={'/carrito/carrito'}>
+    <Link to ={'/carrito'}>
     <button className='bg-pink-600 hover:bg-red-700'> Terminar mi compra</button>
     </Link>
     }

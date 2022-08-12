@@ -1,6 +1,10 @@
 import React from 'react'
 
+
 const CartWidget = () => {
+
+
+
   return (
     <div className='Logo-carrito'>
         <button><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" className="bi bi-basket" viewBox="0 0 16 16">

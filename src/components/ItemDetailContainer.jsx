@@ -5,7 +5,7 @@ import ItemDetail from './ItemDetail'
 
 
 
-const ItemDetailContainer = () => {
+const ItemDetailContainer = ({contador}) => {
 
   const [producto, setProducto] = useState({})
   const {id} = useParams();
@@ -16,7 +16,7 @@ const ItemDetailContainer = () => {
   
     const productohardcore =
     [
-      {id: 1, categoria:"salado", nombre:"Pan de campo", precio: 410, img: "../assets/img/pandecampo.jpg", stock: 5},
+      {id: 1, categoria:"salado", nombre:"Pan de campo", precio: 410, img: "../assets/img/pandecampo.jpg", stock: 5, cantidad:{contador}},
       {id: 2, categoria:"salado", nombre:"Pan multicereal", precio: 450, img:"../assets/img/multi.jpg", stock: 6},
       {id: 3, categoria:"salado", nombre:"Pan de centeno", precio: 500, img:"../assets/img/pancenteno.jpg", stock: 2},
       {id: 4, categoria:"salado", nombre:"Chipa x 1/4", precio: 550, img:"../assets/img/chipa.jpg", stock: 4},

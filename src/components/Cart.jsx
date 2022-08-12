@@ -1,9 +1,21 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { useParams } from 'react-router-dom'
+import { myContext } from './CartContext'
 
-const Cart = () => {
+
+
+
+export default function Cart() {
+  const {carrito} = useParams()
+
+const{cart, setCart, addToCart} = useContext(myContext)
+
+
+let arrayCarrito = []
+
   return (
-    <div>Cart</div>
+    <div>
+      {cart}
+    </div>
   )
 }
-
-export default Cart
