@@ -40,9 +40,9 @@ function onAdd(){
       <>
       <div>Producto agregado</div>
     <Link to ={'/'}>
-      <button className='bg-pink-600 hover:bg-red-700' >Seguir comprando</button>
+      <button className='bg-pink-600 hover:bg-red-700 m-2 p-1' >Seguir comprando</button>
     </Link>
-    <Link to={'/Checkout'}><button className='bg-pink-600 hover:bg-red-700' >Finalizar compra</button> 
+    <Link to={'/Checkout'}><button className='bg-pink-600 hover:bg-red-700 p-1' >Finalizar compra</button> 
      </Link>
     
     </>
