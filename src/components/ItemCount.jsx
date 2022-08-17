@@ -1,3 +1,4 @@
+import { Button } from 'bootstrap'
 import React, { useState } from 'react'
 import { useContext } from 'react'
 import { Link } from 'react-router-dom'
@@ -12,7 +13,7 @@ const ItemCount = ({product}) => {
 
  const [count, setCount] = useState(1)
  
- const [agregar, setAgregar] = useState(true)
+ const [removeButton, setRemoveButton] = useState(false)
 
 
 
@@ -27,6 +28,7 @@ function sum (){
 function onAdd(){
 
   addToCart(product, count)
+  setRemoveButton(true)
 
 }
 
@@ -34,21 +36,27 @@ function onAdd(){
 
   return (
     <>
-    { agregar ?
+     { removeButton ? (
+      <>
+      <div>Producto agregado</div>
+    <Link to ={'/'}>
+      <button className='bg-pink-600 hover:bg-red-700' >Seguir comprando</button>
+    </Link>
+    <Link to={'/Checkout'}><button className='bg-pink-600 hover:bg-red-700' >Finalizar compra</button> 
+     </Link>
+    
+    </>
+      ) : (
     <div className='flex border'>
-        
     <div className='fila'>
     <button disabled ={count === 1} onClick={res} className='margin'>-</button>
     <h3 className='margin'>{count}</h3>
     <button  onClick={sum} disabled={count == product.stock} className='margin'>+</button>
     </div>
-    <button className='bg-pink-600 hover:bg-red-700' onClick={() => setAgregar(false)} >Agregar al carrito</button>
-    </div>
-    :
-    <Link to ={'/Cart'}>
-    <button className='bg-pink-600 hover:bg-red-700' onClick={onAdd}> Terminar mi compra</button>
-    </Link>
-    }
+    <button className='bg-pink-600 hover:bg-red-700' onClick={onAdd} >Agregar al carrito</button> 
+    
+    </div>)
+    } 
     </>
   )
     

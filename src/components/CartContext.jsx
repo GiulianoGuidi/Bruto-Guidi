@@ -38,7 +38,7 @@ const [totalToPay, setTotalToPay] = useState(0)
   
 
  function removeItem(id){
-  setCart(cart.filter((item) => item.id != id))
+  setCart(cart.filter(product => product.id != id))
   }
 
   
