@@ -9,6 +9,8 @@ const CartContext = ({children}) => {
 
 
 const [cart, setCart] = useState ([])
+const [totalCount, setTotalCount] = useState (0)
+const [totalToPay, setTotalToPay] = useState(0)
 
 
 
@@ -28,16 +30,26 @@ const [cart, setCart] = useState ([])
   }
    setCart(copiaCart)
   }
-  useEffect (()=>{
-    console.log(cart)
+
+  useEffect(()=>{
+    setTotalCount(cart.reduce((acc, product)=>acc + product.count, 0))
+    setTotalToPay(cart.reduce((acc, product)=>acc + product.count * product.precio, 0))
   },[cart])
+  
 
+ function removeItem(id){
+  setCart(cart.filter((item) => item.id != id))
+  }
 
+  
+useEffect(() =>{
+  console.log(cart)
+},[cart])
  
 
   return (
     <>
-    <myContext.Provider value={ {cart, addToCart } }>
+    <myContext.Provider value={ {cart, addToCart, totalCount, totalToPay, removeItem } }>
     {children}
     </myContext.Provider>
     </>

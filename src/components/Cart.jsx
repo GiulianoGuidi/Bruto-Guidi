@@ -7,14 +7,25 @@ import { myContext } from './CartContext'
 export default function Cart() {
   
 
-const{cart, setCart} = useContext(myContext)
+const{cart, totalCount, totalToPay, removeItem} = useContext(myContext)
 
 
-let arrayCarrito = []
+
 
   return (
-    <div>
-      {cart}
-    </div>
+  <>
+  {cart.map((item) =>{
+    
+  <div key={item.id}>
+  {item.name + ' ' + item.count + <span onClick={() =>removeItem(item.id)}>🗑️</span> }
+  </div>
+    
+   })}
+
+  <div>
+  Tienes en el carro {totalCount} items, total a pagar {totalToPay}
+  </div>
+    
+  </>
   )
 }

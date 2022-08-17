@@ -45,7 +45,7 @@ function onAdd(){
     <button className='bg-pink-600 hover:bg-red-700' onClick={() => setAgregar(false)} >Agregar al carrito</button>
     </div>
     :
-    <Link to ={'/carrito'}>
+    <Link to ={'/Cart'}>
     <button className='bg-pink-600 hover:bg-red-700' onClick={onAdd}> Terminar mi compra</button>
     </Link>
     }
