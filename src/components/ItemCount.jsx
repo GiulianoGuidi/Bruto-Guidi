@@ -1,27 +1,33 @@
 import React, { useState } from 'react'
+import { useContext } from 'react'
 import { Link } from 'react-router-dom'
+import { myContext } from './CartContext'
 
 
 
 
-const ItemCount = ({stock}) => {
+const ItemCount = ({product}) => {
 
- const [contador, setContador] = useState(1)
+  const{cart, addToCart} = useContext(myContext)
+
+ const [count, setCount] = useState(1)
  
  const [agregar, setAgregar] = useState(true)
 
 
 
-
-
-
-
- function resta(){
-    setContador(contador - 1)
+ function res(){
+    setCount(count - 1)
  }
 
-function suma (){
-    setContador(contador + 1 )
+function sum (){
+    setCount(count + 1 )
+}
+
+function onAdd(){
+
+  addToCart(product, count)
+
 }
 
  
@@ -32,15 +38,15 @@ function suma (){
     <div className='flex border'>
         
     <div className='fila'>
-    <button disabled ={contador === 1} onClick={resta} className='margin'>-</button>
-    <h3 className='margin'>{contador}</h3>
-    <button  onClick={suma} disabled={contador == stock} className='margin'>+</button>
+    <button disabled ={count === 1} onClick={res} className='margin'>-</button>
+    <h3 className='margin'>{count}</h3>
+    <button  onClick={sum} disabled={count == product.stock} className='margin'>+</button>
     </div>
     <button className='bg-pink-600 hover:bg-red-700' onClick={() => setAgregar(false)} >Agregar al carrito</button>
     </div>
     :
     <Link to ={'/carrito'}>
-    <button className='bg-pink-600 hover:bg-red-700'> Terminar mi compra</button>
+    <button className='bg-pink-600 hover:bg-red-700' onClick={onAdd}> Terminar mi compra</button>
     </Link>
     }
     </>

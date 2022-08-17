@@ -1,4 +1,6 @@
-import React, { createContext, useState } from 'react'
+import React from 'react'
+import { createContext, useState } from 'react' 
+import { useEffect } from 'react'
 
 
 export const myContext =createContext()
@@ -9,32 +11,34 @@ const CartContext = ({children}) => {
 const [cart, setCart] = useState ([])
 
 
-function isInCart(id){
-  let array = [...cart]
-  const found = array.find(item => item.id === id)
-  if(found){
-    return true
-  }else{
-    return false
-  }
-}
 
-  function addToCart(obj){
-    if(isInCart(obj.id)){
-      obj.cantidad++
-    }else{
-      cart.push(obj.id)
+  function addToCart(product, count){
+
+  const copiaCart = [...cart] 
+  let found = false
+  
+  for (let i = 0; i < copiaCart.length; i++ ){
+    if(copiaCart.id == product.id){
+      copiaCart[i].count += count
+      found = true
     }
-
   }
+  if(!found){
+    copiaCart.push({...product, count})
+  }
+   setCart(copiaCart)
+  }
+  useEffect (()=>{
+    console.log(cart)
+  },[cart])
 
 
  
 
   return (
     <>
-    <myContext.Provider value={{cart, setCart, addToCart}}>
-    <div>{children}</div>
+    <myContext.Provider value={ {cart, addToCart } }>
+    {children}
     </myContext.Provider>
     </>
   )

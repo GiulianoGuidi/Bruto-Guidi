@@ -1,22 +1,23 @@
-import React from 'react'
+
 import ItemCount from './ItemCount'
 
 
 
 
-const ItemDetail = ({producto}) => {
+
+const ItemDetail = ({product}) => {
 
 
 
   return (
     <>
     <div className='caja'>
-    <img src={producto.img} alt='' className='img2' />
-    <h2>{producto.nombre}</h2> 
-    <p>${producto.precio}</p>
-    <p>Stock disponible  {producto.stock}</p>
+    <img src={product.img} alt='' className='img2' />
+    <h2>{product.nombre}</h2> 
+    <p>${product.precio}</p>
+    <p>Stock disponible  {product.stock}</p>
 
-    <ItemCount stock ={producto.stock}/>
+    <ItemCount product={product} />
     </div>
      
      </>

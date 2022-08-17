@@ -5,9 +5,9 @@ import ItemDetail from './ItemDetail'
 
 
 
-const ItemDetailContainer = ({contador}) => {
+const ItemDetailContainer = () => {
 
-  const [producto, setProducto] = useState({})
+  const [product, setProduct] = useState({})
   const {id} = useParams();
   
   useEffect (() => {
@@ -16,7 +16,7 @@ const ItemDetailContainer = ({contador}) => {
   
     const productohardcore =
     [
-      {id: 1, categoria:"salado", nombre:"Pan de campo", precio: 410, img: "../assets/img/pandecampo.jpg", stock: 5, cantidad:{contador}},
+      {id: 1, categoria:"salado", nombre:"Pan de campo", precio: 410, img: "../assets/img/pandecampo.jpg", stock: 5},
       {id: 2, categoria:"salado", nombre:"Pan multicereal", precio: 450, img:"../assets/img/multi.jpg", stock: 6},
       {id: 3, categoria:"salado", nombre:"Pan de centeno", precio: 500, img:"../assets/img/pancenteno.jpg", stock: 2},
       {id: 4, categoria:"salado", nombre:"Chipa x 1/4", precio: 550, img:"../assets/img/chipa.jpg", stock: 4},
@@ -41,7 +41,7 @@ const ItemDetailContainer = ({contador}) => {
     },1000)
   })
   mostrarProductos.then((res) =>{
-    setProducto(res)
+    setProduct(res)
   })
 
 
@@ -51,7 +51,7 @@ const ItemDetailContainer = ({contador}) => {
 
   return (
     <>
-     {id.length ? <ItemDetail producto = {producto} /> : <p>Cargando...</p> }
+     {id.length ? <ItemDetail product = {product} /> : <p>Cargando...</p> }
     </>
   )
 }
