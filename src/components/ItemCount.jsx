@@ -1,4 +1,4 @@
-import { Button } from 'bootstrap'
+
 import React, { useState } from 'react'
 import { useContext } from 'react'
 import { Link } from 'react-router-dom'
@@ -7,9 +7,10 @@ import { myContext } from './CartContext'
 
 
 
+
 const ItemCount = ({product}) => {
 
-  const{cart, addToCart} = useContext(myContext)
+  const{cart, addToCart, setEmptyCart} = useContext(myContext)
 
  const [count, setCount] = useState(1)
  
@@ -29,6 +30,7 @@ function onAdd(){
 
   addToCart(product, count)
   setRemoveButton(true)
+  setEmptyCart(false)
 
 }
 
@@ -42,7 +44,7 @@ function onAdd(){
     <Link to ={'/'}>
       <button className='bg-pink-600 hover:bg-red-700 m-2 p-1' >Seguir comprando</button>
     </Link>
-    <Link to={'/Checkout'}><button className='bg-pink-600 hover:bg-red-700 p-1' >Finalizar compra</button> 
+    <Link to={'/Cart'}><button className='bg-pink-600 hover:bg-red-700 p-1' >Finalizar compra</button> 
      </Link>
     
     </>

@@ -11,6 +11,7 @@ const CartContext = ({children}) => {
 const [cart, setCart] = useState ([])
 const [totalCount, setTotalCount] = useState (0)
 const [totalToPay, setTotalToPay] = useState(0)
+const [emptyCart, setEmptyCart] = useState(true)
 
 
 
@@ -39,6 +40,8 @@ const [totalToPay, setTotalToPay] = useState(0)
 
  function removeItem(id){
   setCart(cart.filter(product => product.id != id))
+
+ 
   }
 
   
@@ -49,7 +52,7 @@ useEffect(() =>{
 
   return (
     <>
-    <myContext.Provider value={ {cart, addToCart, totalCount, totalToPay, removeItem } }>
+    <myContext.Provider value={ {cart, addToCart, totalCount, totalToPay, removeItem, emptyCart, setEmptyCart } }>
     {children}
     </myContext.Provider>
     </>

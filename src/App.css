@@ -10,8 +10,10 @@
 }
 
 .img2{
-  width:400px;
+  width:300px;
   height: 300px;
+  margin-right: 10px;
+  margin-top: 20px;
 }
 
 
@@ -74,6 +76,21 @@
   margin: 10px;
   margin-bottom: 20px;
   box-shadow: 2px 6px 3px 3px rgba(0, 0, 0, 0.3);
+  
+  
+}
+
+.flexBox{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  
+}
+
+.box{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .flexo{

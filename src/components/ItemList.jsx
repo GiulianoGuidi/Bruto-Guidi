@@ -3,12 +3,12 @@ import Item from './Item'
 
 
 
-const ItemList = ({producto}) => {
+const ItemList = ({productos}) => {
   return (
     <div className='grid grid-cols-4 gap-4'>
    {
-   producto.map((item) => 
-    <Item key = {item.id} id= {item.id} img = {item.img} categoria ={item.categoria} nombre = {item.nombre} precio = {item.precio} stock = {item.stock} />
+   productos.map((product) => 
+    <Item key={product.id} product = {product}  />
    )}
     </div>
   )
