@@ -1,5 +1,4 @@
 import React, { useContext } from 'react'
-import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { myContext } from './CartContext'
 
@@ -24,7 +23,7 @@ setEmptyCart(true)
   { emptyCart ?
   (
     <>
-  <div>No hay elementos en el carrito </div>
+  <div className='txt-lg'>No hay elementos en el carrito </div>
   <Link to={"/"}>
     <button className='border bg-red-300'>Ir a home</button>
   </Link>

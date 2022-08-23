@@ -22,7 +22,7 @@ const [emptyCart, setEmptyCart] = useState(true)
   
   for (let i = 0; i < copiaCart.length; i++ ){
     if(copiaCart.id == product.id){
-      copiaCart[i].count += count
+      copiaCart[i].count = copiaCart[i].count + count
       found = true
     }
   }
@@ -44,15 +44,17 @@ const [emptyCart, setEmptyCart] = useState(true)
  
   }
 
+function deleteCart(){
+setCart([])
+}
+
   
-useEffect(() =>{
-  console.log(cart)
-},[cart])
+
  
 
   return (
     <>
-    <myContext.Provider value={ {cart, addToCart, totalCount, totalToPay, removeItem, emptyCart, setEmptyCart } }>
+    <myContext.Provider value={ {cart, addToCart, totalCount, totalToPay, removeItem, emptyCart, setEmptyCart, deleteCart } }>
     {children}
     </myContext.Provider>
     </>
