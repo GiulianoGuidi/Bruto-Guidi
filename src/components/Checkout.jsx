@@ -30,13 +30,14 @@ function validateForm(){
 }) 
 }
 
-if (cart.length == 0) {
-  return  <><div>No tienes productos a pagar</div> <Link to={'/'} className='border bg-red-300'>Ir a home</Link></>  
+if (cart.length === 0) {
+  
+  return  <> {"Muchas gracias por su compra!, el id de su pedido es : " + '' + orderId} <div>No tienes productos a pagar</div> <Link to={'/'} className='border bg-red-300'>Ir a home</Link></>  
 } 
 
   return (
     <>
-  {orderId ? ("Muchas gracias por su compra!, el id de tu orden es : " + '' + orderId)
+  {orderId ? ("Muchas gracias por su compra!, el id de su pedido es : " + '' + orderId)
    :(
     <div> Para terminar, ingrese sus datos 
       <br />

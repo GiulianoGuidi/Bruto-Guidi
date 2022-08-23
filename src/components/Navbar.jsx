@@ -16,6 +16,8 @@ const Navbar = () => {
         <Link to = {'/categorias/salado'} className='bg-red-100 rounded-xl p-2 m-2'>Salado</Link>
 
         <Link to = {'/categorias/pizza'} className='bg-red-100 rounded-xl p-2 m-2'>Pizza</Link>
+
+        <Link to ={'Checkout'} className="bg-red-100 rounded-xl p-2 m-2">Checkout</Link>
         </div>
          
     </div>
