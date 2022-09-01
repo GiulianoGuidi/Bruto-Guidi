@@ -31,7 +31,7 @@ const ItemDetailContainer = () => {
 
   return (
     <>
-     {id.length ? <ItemDetail product = {product} /> : <p>Cargando...</p> }
+     {id.length ? <ItemDetail product = {product} /> : <p className='italic text-xl'>Cargando...</p> }
     </>
   )
 }

@@ -11,11 +11,13 @@ export default function Cart() {
 const{cart, totalCount, totalToPay, removeItem, emptyCart, setEmptyCart} = useContext(myContext)
 
 
+
+
+
+
 if(cart == 0){
 setEmptyCart(true)
 }
-
-
 
   return (
   <>
@@ -23,9 +25,9 @@ setEmptyCart(true)
   { emptyCart ?
   (
     <>
-  <div className='txt-lg'>No hay elementos en el carrito </div>
+  <div className='text-xl text-slate-900 italic text-xl'>No hay elementos en el carrito </div>
   <Link to={"/"}>
-    <button className='border bg-red-300'>Ir a home</button>
+    <button className='border bg-red-300 rounded-xl p-2 text-xl text-slate-900 italic text-xl hover:bg-red-700'>Volver a la tienda</button>
   </Link>
    </>
   )
@@ -35,17 +37,17 @@ setEmptyCart(true)
  <>
  {   
  cart.map((item) =>( 
-  <div key={item.id}>
+  <div key={item.id} className="italic text-xl">
   {item.nombre + ' ' + item.count}{' '} <button onClick={() =>removeItem(item.id)}>🗑️</button> 
   </div>
     
   ))}
 
-  <div>
+  <div className='italic text-xl'>
   Tienes en el carro {totalCount} items, total a pagar ${totalToPay}
   </div>
   <Link to ={'/Checkout'}>
-    <button className='border bg-red-300 p-2'>FINALIZAR COMPRA</button>
+    <button className='border bg-red-300 p-2 italic text-xl rounded-xl'>FINALIZAR COMPRA</button>
   </Link>
   </>)
   }

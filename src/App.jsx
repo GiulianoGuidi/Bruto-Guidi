@@ -6,6 +6,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Cart from './components/Cart'
 import CartContext from './components/CartContext'
 import Checkout from './components/Checkout'
+import Footer from './components/Footer'
+import NuestrosPanes from './components/NuestrosPanes'
 
 
 function App() {
@@ -22,9 +24,12 @@ function App() {
    <Route path= '/categorias/:categoria' element= {<ItemListContainer />} />
    <Route path='/item/:id' element= {<ItemDetailContainer />} />
    <Route path='/Cart' element= {<Cart />} />
+   <Route path='/NuestrosPanes' element={<NuestrosPanes />} />
    <Route path='/Checkout' element= {<Checkout />} />
+   
 
    </Routes>
+   <Footer />
   </BrowserRouter>
   </CartContext>
   

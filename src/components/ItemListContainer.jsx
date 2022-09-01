@@ -41,7 +41,7 @@ else{
     <div className='bg-gray-100 p-4 m-5'>
       <h2 className='flexo'>{categoria}</h2>
 
-   {productos.length ? <ItemList productos = {productos} /> : <p>Cargando...</p> }
+   {productos.length ? <ItemList productos = {productos} /> : <p className='italic text-xl'>Cargando...</p> }
 
    
 

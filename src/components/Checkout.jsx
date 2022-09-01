@@ -30,23 +30,25 @@ function validateForm(){
 }) 
 }
 
-if (cart.length === 0) {
+if (cart.length == 0) {
   
-  return  <> {"Muchas gracias por su compra!, el id de su pedido es : " + '' + orderId} <div>No tienes productos a pagar</div> <Link to={'/'} className='border bg-red-300'>Ir a home</Link></>  
+  return  <><div className='italic text-xl'>No tienes productos a pagar</div> 
+  <Link to={'/'} ><button className='border bg-red-300 rounded-xl italic text-xl hover:bg-red-700 p-2'>Volver a la tienda</button></Link>
+  </>  
 } 
 
   return (
     <>
   {orderId ? ("Muchas gracias por su compra!, el id de su pedido es : " + '' + orderId)
    :(
-    <div> Para terminar, ingrese sus datos 
+    <div className='italic text-xl'> Para terminar, ingrese sus datos 
       <br />
       <input type='text' placeholder='Name' className='border p-1' onChange={(e) => setName(e.target.value)}/>
 
       <input type='tel' placeholder='Tel' className='border p-1' onChange={(e) => setTel(e.target.value)}/>
 
       <input type='email' placeholder='Email' className='border p-1' onChange={(e) => setEmail(e.target.value)}/>
-      <button onClick={validateForm} className='border p-1 m-2'>ENVIAR</button>
+      <button onClick={validateForm} className='border p-1 m-2 italic text-xl'>ENVIAR</button>
     </div>
    )
   }

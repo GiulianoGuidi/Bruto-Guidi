@@ -8,12 +8,28 @@ export const myContext =createContext()
 const CartContext = ({children}) => {
 
 
-const [cart, setCart] = useState ([])
+let [cart, setCart] = useState ([])
 const [totalCount, setTotalCount] = useState (0)
 const [totalToPay, setTotalToPay] = useState(0)
 const [emptyCart, setEmptyCart] = useState(true)
 
+useEffect(()=>{
+document.addEventListener('DOMContentLoaded', () =>{
 
+  console.log(localStorage)
+  
+  if(localStorage.getItem('cart')){
+      cart = JSON.parse(localStorage.getItem('cart'))
+    }else{
+      localStorage.setItem('cart', JSON.stringify(cart))
+    }
+
+  })
+},[])
+
+  localStorage.setItem('cart', JSON.stringify(cart))
+
+console.log(cart)
 
   function addToCart(product, count){
 
@@ -21,16 +37,20 @@ const [emptyCart, setEmptyCart] = useState(true)
   let found = false
   
   for (let i = 0; i < copiaCart.length; i++ ){
-    if(copiaCart.id == product.id){
+    if(copiaCart[i].id == product.id){
       copiaCart[i].count = copiaCart[i].count + count
       found = true
+      
     }
-  }
-  if(!found){
+  }if(!found){
     copiaCart.push({...product, count})
   }
+  
    setCart(copiaCart)
+
+   
   }
+
 
   useEffect(()=>{
     setTotalCount(cart.reduce((acc, product)=>acc + product.count, 0))
