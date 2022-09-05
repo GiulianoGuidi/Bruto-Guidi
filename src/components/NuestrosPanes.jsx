@@ -3,7 +3,8 @@ import React from 'react'
 export default function NuestrosPanes() {
   return (
     <>
- <div className='italic border text-xl text-center container-fluid'>
+    <div className='flex justify-center'>
+ <div className='italic border text-xl max-w-prose'>
   <div className='flex justify-center'>
 <p className='p-2 m-2 text-xl text-center'>Nuestros panes están elaborados con masa madre, un fermento natural y compuesto por agua, harina, paciencia y mucha dedicación. Las harinas que utilizamos son sin aditivos y además, orgánicas. los mismos llevan un proceso de fermentación en frío de entre 24 y 48hs.	
 </p>
@@ -27,6 +28,7 @@ export default function NuestrosPanes() {
 <h4 className='p-2 m-2 text-2xl text-start'>Contiene bajo índice glucémico</h4>
 <p className='text start'>El pan con masa madre tiene un menor índice glucémico en relación con los panes elaborados solo con levadura panadera. El índice glucémico mas bajo no solo tiene un efecto positivo sobre la saciedad, si no que puede ayudar a controlar mejor los niveles de azúcar en sangre, la ingesta de alimentos e incluso a regular nuestro colesterol.</p>
 
+</div>
 </div>
 
 </>

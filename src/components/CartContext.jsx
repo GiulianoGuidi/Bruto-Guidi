@@ -2,34 +2,24 @@ import React from 'react'
 import { createContext, useState } from 'react' 
 import { useEffect } from 'react'
 
-
 export const myContext =createContext()
+
+const cartFromLocalStorage = JSON.parse(localStorage.getItem('cart') || '[]')
 
 const CartContext = ({children}) => {
 
 
-let [cart, setCart] = useState ([])
-const [totalCount, setTotalCount] = useState (0)
+
+
+const [cart, setCart] = useState (cartFromLocalStorage)
+const [totalCount, setTotalCount] = useState(0)
 const [totalToPay, setTotalToPay] = useState(0)
 const [emptyCart, setEmptyCart] = useState(true)
 
-useEffect(()=>{
-document.addEventListener('DOMContentLoaded', () =>{
-
-  console.log(localStorage)
-  
-  if(localStorage.getItem('cart')){
-      cart = JSON.parse(localStorage.getItem('cart'))
-    }else{
-      localStorage.setItem('cart', JSON.stringify(cart))
-    }
-
-  })
-},[])
-
+useEffect(() =>{
   localStorage.setItem('cart', JSON.stringify(cart))
+},[cart])
 
-console.log(cart)
 
   function addToCart(product, count){
 
@@ -49,12 +39,15 @@ console.log(cart)
    setCart(copiaCart)
 
    
+   
   }
 
 
   useEffect(()=>{
     setTotalCount(cart.reduce((acc, product)=>acc + product.count, 0))
     setTotalToPay(cart.reduce((acc, product)=>acc + product.count * product.precio, 0))
+
+  
   },[cart])
   
 
