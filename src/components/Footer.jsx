@@ -3,7 +3,7 @@ import React from 'react'
 export default function Footer() {
   return (
     <>
-    <div className='bg-slate-700 p-2 m-4'>
+    <div className='bg-slate-700 pt-10 container '>
     <div className='grid grid-cols-1'>
      <div className='flex justify-center'>  
     <img src='../assets/img/logopng.png'  className='w-40 h-40'/>

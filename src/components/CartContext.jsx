@@ -14,7 +14,8 @@ const CartContext = ({children}) => {
 const [cart, setCart] = useState (cartFromLocalStorage)
 const [totalCount, setTotalCount] = useState(0)
 const [totalToPay, setTotalToPay] = useState(0)
-const [emptyCart, setEmptyCart] = useState(true)
+const [emptyCart, setEmptyCart] = useState()
+
 
 useEffect(() =>{
   localStorage.setItem('cart', JSON.stringify(cart))
@@ -23,20 +24,20 @@ useEffect(() =>{
 
   function addToCart(product, count){
 
-  const copiaCart = [...cart] 
+  const cartAux = [...cart] 
   let found = false
   
-  for (let i = 0; i < copiaCart.length; i++ ){
-    if(copiaCart[i].id == product.id){
-      copiaCart[i].count = copiaCart[i].count + count
+  for (let i = 0; i < cartAux.length; i++ ){
+    if(cartAux[i].id == product.id){
+      cartAux[i].count = cartAux[i].count + count
       found = true
       
     }
   }if(!found){
-    copiaCart.push({...product, count})
+    cartAux.push({...product, count})
   }
   
-   setCart(copiaCart)
+   setCart(cartAux)
 
    
    

@@ -3,7 +3,7 @@ import React from 'react'
 export default function NuestrosPanes() {
   return (
     <>
-    <div className='flex justify-center'>
+    <div className='flex justify-center p-2'>
  <div className='italic border text-xl max-w-prose'>
   <div className='flex justify-center'>
 <p className='p-2 m-2 text-xl text-center'>Nuestros panes están elaborados con masa madre, un fermento natural y compuesto por agua, harina, paciencia y mucha dedicación. Las harinas que utilizamos son sin aditivos y además, orgánicas. los mismos llevan un proceso de fermentación en frío de entre 24 y 48hs.	

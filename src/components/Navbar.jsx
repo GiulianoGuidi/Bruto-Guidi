@@ -25,11 +25,11 @@ const Navbar = () => {
         <Link to ={'NuestrosPanes'} className="bg-red-100 rounded-xl m-4 p-2 italic">Nuestros panes</Link>
 
         
-        
+        <CartWidget />
        
     </div>
     
-    <CartWidget /> 
+    
   
     </>
   )

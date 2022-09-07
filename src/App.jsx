@@ -10,6 +10,7 @@ import Footer from './components/Footer'
 import NuestrosPanes from './components/NuestrosPanes'
 
 
+
 function App() {
 
   
@@ -29,8 +30,10 @@ function App() {
    
 
    </Routes>
+  
    <Footer />
   </BrowserRouter>
+  
   </CartContext>
   
    </>

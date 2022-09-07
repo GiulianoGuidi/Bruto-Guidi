@@ -11,7 +11,7 @@ const ItemDetail = ({product}) => {
 
   return (
     <>
-    <div className='flex justify-center'>
+    <div className='flex justify-center pt-8'>
     <img src={product.img} alt='' className='w-400 h-auto w-64 h-64 rounded-xl' />
     
     <div className='m-8'>

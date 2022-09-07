@@ -40,13 +40,14 @@ function onAdd(){
     <>
      { removeButton ? (
       <>
+      <div className='p-6'>
       <div className='italic text-xl'>Producto agregado</div>
     <Link to ={'/'}>
       <button className='bg-pink-600 hover:bg-red-700 m-2 p-1 italic text-xl rounded-xl' >Seguir comprando</button>
     </Link>
     <Link to={'/Cart'}><button className='bg-pink-600 hover:bg-red-700 p-1 italic text-xl rounded-xl' >Finalizar compra</button> 
      </Link>
-    
+     </div>
     </>
       ) : (
     <div>

@@ -18,22 +18,22 @@ const Item = ({product}) => {
   return (
     <>
     
-     <div className='bg-white-300 p-3 rounded-xl tt-g'>
-     <Link to={`/item/${product.id}`}>
-      <button className='italic text-xl'>Ver detalle</button>
-    </Link>
-     <img src={product.img} alt='' className='w-60 h-60 rounded-xl' /> 
+     <div className='bg-white-300 p-3 rounded-xl tt-g border border-slate-800 w-80'>
+    
+     <img src={product.img} alt='' className='w-80 h-80 rounded-xl' /> 
      
      <p className='italic text-xl'>{product.nombre}</p>
      <p className='italic text-xl'>${product.precio}</p>
 
-     <div className='bg-white-600 border-black border-2 hover:bg-orange-400 hover:text-white hover:border-white flex justify-center rounded-xl w-60' >
-    <button className='text-xl text-center italic' onClick={onAdd} >Añadir al carrito</button> 
-    </div>
-     
-
+     <Link to={`/item/${product.id}`}>
+      <div className='flex justify-center'>
+      <button className='italic text-xl bg-white-600 border-black border-2 hover:bg-orange-400 hover:text-white hover:border-white rounded-xl p-1'>
+        Ver detalle de producto</button>
+      </div>
+    </Link>
      
      </div>
+     
      </>
    
   
